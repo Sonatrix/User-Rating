@@ -1,7 +1,7 @@
 <template name="rating">
   <div class="container">
     <div class="row">
-
+{{#if currentUser}}
     <h3>Click here to add me in listed users list for rating if not Listed<button class="btn btn-success addMeRating">+</button></h3>
     
 
@@ -16,6 +16,9 @@
         </div>
     {{/each}}
     </div>
+    {{else}}
+      <h4>Login to rate users</h4>
+    {{/if}}
     <div class="col-md-7">
       <div id="container" style="min-width: 300px; margin: 0 auto"></div>
     </div>

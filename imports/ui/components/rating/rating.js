@@ -3,8 +3,6 @@ import { UsersRating } from '/imports/api/links/links.js';
 import { Meteor } from 'meteor/meteor';
 
 Template.rating.onCreated(function helloOnCreated() {
-    // counter starts at 0
-    this.counter = new ReactiveVar(0);
     Meteor.subscribe('usersRating');
 });
 
@@ -13,9 +11,6 @@ Template.rating.rendered = () => {
 };
 
 Template.rating.helpers({
-    counter() {
-        return Template.instance().counter.get();
-    },
     users() {
         let users = UsersRating.find({});
         if (users) {
@@ -42,8 +37,6 @@ Template.rating.helpers({
 
             return data;
         }
-        //let data = UsersRating.find({});
-        //return UsersRating.find({});
     },
 });
 
