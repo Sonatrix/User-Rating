@@ -1,0 +1,27 @@
+<template name="rating">
+  <div class="container">
+    <div class="row">
+
+    <h3>Click here to add me in listed users list for rating if not Listed<button class="btn btn-success addMeRating">+</button></h3>
+    
+
+    <h2>Listed Users Rating(by default it is set to 0)</h2> 
+    <br/>
+    <div class="col-md-5">
+       {{#each users}}
+       <div class="col-md-12">
+        <input type="text" name="username" placeholder="username" id="user_{{_id}}" value="{{username}}" required readonly>
+        <input type="number" name="rating" id="rating_{{_id}}" placeholder="rating" min=1 max=5  value="{{rating}}" required>
+        <button class="btn btn-success incrementRating" id="{{_id}}">+</button>
+        </div>
+    {{/each}}
+    </div>
+    <div class="col-md-7">
+      <div id="container" style="min-width: 300px; margin: 0 auto"></div>
+    </div>
+    </div>
+
+
+
+</div>
+</template>
